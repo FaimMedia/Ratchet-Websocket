@@ -1,0 +1,24 @@
+{
+	"name": "faimmedia/ratchet-websocket",
+	"description": "Easy to use MailChimp v3 API library for PHP",
+	"homepage": "https://github.com/faimmedia/Ratchet-Websocket/",
+
+	"license": "MIT",
+
+	"authors": [{
+		"name": "Tim Peters",
+		"email": "info@faimmedia.nl",
+		"homepage": "https://faimmedia.nl",
+		"role": "Developer"
+	}],
+
+	"require": {
+		"cboden/ratchet": "~0.3",
+	},
+
+	"autoload": {
+		"psr-4": {
+			"FaimMedia\\Websocket\\": "src/"
+		}
+	}
+}
