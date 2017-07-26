@@ -1,7 +1,7 @@
 {
 	"name": "faimmedia/ratchet-websocket",
-	"description": "Easy to use MailChimp v3 API library for PHP",
-	"homepage": "https://github.com/faimmedia/Ratchet-Websocket/",
+	"description": "Improved wrapper for PHP Ratchet websocket server",
+	"homepage": "https://github.com/FaimMedia/Ratchet-Websocket",
 
 	"license": "MIT",
 
@@ -13,7 +13,7 @@
 	}],
 
 	"require": {
-		"cboden/ratchet": "~0.3",
+		"cboden/ratchet": "~0.3"
 	},
 
 	"autoload": {
