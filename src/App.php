@@ -21,6 +21,8 @@ use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 
+use DomainException;
+
 class App extends RatchetApp {
 
 	/**
@@ -33,10 +35,12 @@ class App extends RatchetApp {
 		if (extension_loaded('xdebug')) {
 			trigger_error('XDebug extension detected. Remember to disable this if performance testing or going live!', E_USER_WARNING);
 		}
-		if (3 !== strlen('✓')) {
-			throw new \DomainException('Bad encoding, length of unicode character ✓ should be 3. Ensure charset UTF-8 and check ini val mbstring.func_autoload');
+
+		if (strlen('✓') !== 3) {
+			throw new DomainException('Bad encoding, length of unicode character ✓ should be 3. Ensure charset UTF-8 and check ini val mbstring.func_autoload');
 		}
-		if (null === $loop) {
+
+		if ($loop === null) {
 			$loop = LoopFactory::create();
 		}
 
