@@ -40,15 +40,15 @@ class App extends RatchetApp {
 			throw new DomainException('Bad encoding, length of unicode character ✓ should be 3. Ensure charset UTF-8 and check ini val mbstring.func_autoload');
 		}
 
-		if ($loop === null) {
+		if (null === $loop) {
 			$loop = LoopFactory::create();
 		}
 
 		$this->httpHost = $httpHost;
 		$this->port = $port;
 
-		$socket = new Reactor($loop);
-		$socket->listen($port, $address);
+		$socket = new Reactor($address . ':' . $port, $loop);
+
 		$this->routes  = new RouteCollection;
 		$this->_server = new IoServer(new HttpServer(new Router(new UrlMatcher($this->routes, new RequestContext))), $socket, $loop);
 	}
